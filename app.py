@@ -4,16 +4,15 @@ import joblib
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the trained model and preprocessing objects
-model = joblib.load('model.pkl')
-scaler = joblib.load('scaler.pkl')
-area_name_encoder = joblib.load('area_name_encoder.pkl')
-crime_code_description_encoder = joblib.load('crime_code_description_encoder.pkl')
-victim_sex_encoder = joblib.load('victim_sex_encoder.pkl')
-victim_descent_encoder = joblib.load('victim_descent_encoder.pkl')
-status_code_encoder = joblib.load('status_code_encoder.pkl')
-day_of_week_reported_encoder = joblib.load('day_of_week_reported_encoder.pkl')
-day_of_week_occurred_encoder = joblib.load('day_of_week_occurred_encoder.pkl')
-age_category_encoder = joblib.load('age_category_encoder.pkl')
+model = joblib.load('/home/oem/Crime-Suspect/crime_model.pkl')
+scaler = joblib.load('/home/oem/Crime-Suspect/scaler.pkl')
+area_name_encoder = joblib.load('/home/oem/Crime-Suspect/area_name_encoder.pkl')
+crime_code_description_encoder = joblib.load('/home/oem/Crime-Suspect/crime_code_description_encoder.pkl')
+victim_sex_encoder = joblib.load('/home/oem/Crime-Suspect/victim_sex_encoder.pkl')
+victim_descent_encoder = joblib.load('/home/oem/Crime-Suspect/victim_descent_encoder.pkl')
+status_code_encoder = joblib.load('/home/oem/Crime-Suspect/status_code_encoder.pkl')
+day_of_week_encoder = joblib.load('/home/oem/Crime-Suspect/day_of_week_encoder.pkl')
+age_category_encoder = joblib.load('/home/oem/Crime-Suspect/age_category_encoder.pkl')
 
 # Define the prediction function with preprocessing
 def predict_suspect(features):
@@ -26,8 +25,8 @@ def predict_suspect(features):
     features_df['Victim Sex'] = victim_sex_encoder.transform(features_df['Victim Sex'])
     features_df['Victim Descent'] = victim_descent_encoder.transform(features_df['Victim Descent'])
     features_df['Status Code'] = status_code_encoder.transform(features_df['Status Code'])
-    features_df['Day of Week Reported'] = day_of_week_reported_encoder.transform(features_df['Day of Week Reported'])
-    features_df['Day of Week Occurred'] = day_of_week_occurred_encoder.transform(features_df['Day of Week Occurred'])
+    features_df['Day of Week Reported'] = day_of_week_encoder.transform(features_df['Day of Week Reported'])
+    features_df['Day of Week Occurred'] = day_of_week_encoder.transform(features_df['Day of Week Occurred'])
     features_df['Age Category'] = age_category_encoder.transform(features_df['Age Category'])
 
     # Scale numerical features
