@@ -4,15 +4,15 @@ import joblib
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the trained model and preprocessing objects
-model = joblib.load('/home/oem/Crime-Suspect/crime_model.pkl')
-scaler = joblib.load('/home/oem/Crime-Suspect/scaler.pkl')
-area_name_encoder = joblib.load('/home/oem/Crime-Suspect/area_name_encoder.pkl')
-crime_code_description_encoder = joblib.load('/home/oem/Crime-Suspect/crime_code_description_encoder.pkl')
-victim_sex_encoder = joblib.load('/home/oem/Crime-Suspect/victim_sex_encoder.pkl')
-victim_descent_encoder = joblib.load('/home/oem/Crime-Suspect/victim_descent_encoder.pkl')
-status_code_encoder = joblib.load('/home/oem/Crime-Suspect/status_code_encoder.pkl')
-day_of_week_encoder = joblib.load('/home/oem/Crime-Suspect/day_of_week_encoder.pkl')
-age_category_encoder = joblib.load('/home/oem/Crime-Suspect/age_category_encoder.pkl')
+model = joblib.load('crime_model.pkl')
+scaler = joblib.load('scaler.pkl')
+area_name_encoder = joblib.load('area_name_encoder.pkl')
+crime_code_description_encoder = joblib.load('crime_code_description_encoder.pkl')
+victim_sex_encoder = joblib.load('victim_sex_encoder.pkl')
+victim_descent_encoder = joblib.load('victim_descent_encoder.pkl')
+status_code_encoder = joblib.load('status_code_encoder.pkl')
+day_of_week_encoder = joblib.load('day_of_week_encoder.pkl')
+age_category_encoder = joblib.load('age_category_encoder.pkl')
 
 # Define the prediction function with preprocessing
 def predict_suspect(features):
